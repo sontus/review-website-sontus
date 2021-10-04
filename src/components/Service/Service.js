@@ -2,14 +2,12 @@ import React from 'react';
 
 const Service = (props) => {
 
-     const {key,titleImg,name,enroll,title,duration,lectures,learner_level,trainerImg,trainerName,courseFees} = props.service;
+     const {titleImg,name,enroll,title,duration,lectures,learner_level,trainerImg,trainerName,courseFees} = props.service;
     return (
         <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12">
         <div className="crs_grid">
             <div className="crs_grid_thumb">
-                <a href="course-detail.html" className="crs_detail_link">
-                    <img src={titleImg} className="img-fluid rounded" alt="" />
-                </a>
+                <img src={titleImg} className="img-fluid rounded" alt="" />
                 <div className="crs_video_ico">
                     <i className="fa fa-play"></i>
                 </div>
@@ -26,7 +24,9 @@ const Service = (props) => {
                         <div className="crs_inrolled"><strong>{enroll} </strong>Enrolled</div>
                     </div>
                 </div>
-                <div className="crs_title"><h4><a href="course-detail.html" className="crs_title_link">{title.slice(0, 40)}</a></h4></div>
+                <div className="crs_title">
+                    <h4> {title}</h4>
+                    </div>
                 <div className="crs_info_detail">
                     <ul>
                         <li><i className="fa fa-clock text-danger"></i><span>{duration}</span></li>
@@ -39,7 +39,7 @@ const Service = (props) => {
                 <div className="crs_flex">
                     <div className="crs_fl_first">
                         <div className="crs_tutor">
-                            <div className="crs_tutor_thumb"><a href="instructor-detail.html"><img src={trainerImg} className="img-fluid circle" alt="" /></a></div><div className="crs_tutor_name"><a href="instructor-detail.html">{trainerName}</a></div>
+                            <div className="crs_tutor_thumb"><img src={trainerImg} className="img-fluid circle" alt="" /></div><div className="crs_tutor_name">{trainerName}</div>
                         </div>
                     </div>
                     <div className="crs_fl_last">

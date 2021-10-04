@@ -3,3 +3,6 @@
     text-decoration: none;
     padding: 8px;
 }
+.navbar-brand img{
+    width: 60px;
+}
