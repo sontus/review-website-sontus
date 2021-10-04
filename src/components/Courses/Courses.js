@@ -1,42 +1,49 @@
 import React from 'react';
 import './Courses.css'
 
-const Courses = () => {
+const Courses = (props) => {
+    const {key,titleImg,name,enroll,title,duration,lectures,learner_level,trainerImg,trainerName,courseFees} = props.course;
     return (
-        <div class="owl-item cloned">
-            <div class="item">
-                <div class="card mb-0 overflow-hidden">
-                    <div class="card-body">
-                        {/* <img src="../../assets/images/media/color/sm/1.jpg" alt="img" class="w-9 h-9 br-7 mb-4"> */}
-                        <div class="">
-                            <div class="item-card2">
-                                <div class="item-card2-desc">
-                                    <div class="d-inline-flex">
-                                        <div class="star-ratings start-ratings-main clearfix me-3">
-                                            <div class="stars stars-example-fontawesome stars-example-fontawesome-sm">
-                                                <div class="br-wrapper br-theme-fontawesome-stars">
-                                                    <select class="example-fontawesome" name="rating" autocomplete="off" style="display: none;">
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4" selected="">4</option>
-                                                        <option value="5">5</option>
-                                                    </select>
-                                                    <div class="br-widget">
-                                                    
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <span class="">758 reviews</span>
-                                    </div>
-                                    <div class="item-card2-text mb-1">
-                                        <a href="page-details.html" class="text-dark"><h4 class="mb-2">HTML</h4></a>
-                                    </div>
-                                    <a href="javascript:void(0)" class="">HTML</a>, <a href="javascript:void(0)" class="">Training</a>, <a href="javascript:void(0)" class="">Coding class</a>, <a href="javascript:void(0)" class="">Examinations</a>
-                                    <h4 class="mt-3 fs-25">$35 <del class="fs-16 text-muted">$65</del></h4>
-                                </div>
-                            </div>
+        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+        <div className="crs_grid">
+            <div className="crs_grid_thumb">
+                <a href="course-detail.html" className="crs_detail_link">
+                    <img src={titleImg} className="img-fluid rounded" alt="" />
+                </a>
+                <div className="crs_video_ico">
+                    <i className="fa fa-play"></i>
+                </div>
+                <div className="crs_locked_ico">
+                    <i className="fa fa-lock"></i>
+                </div>
+            </div>
+            <div className="crs_grid_caption">
+                <div className="crs_flex">
+                    <div className="crs_fl_first">
+                        <div className="crs_cates cl_8"><span>{name}</span></div>
+                    </div>
+                    <div className="crs_fl_last">
+                        <div className="crs_inrolled"><strong>{enroll} </strong>Enrolled</div>
+                    </div>
+                </div>
+                <div className="crs_title"><h4><a href="course-detail.html" className="crs_title_link">{title}</a></h4></div>
+                <div className="crs_info_detail">
+                    <ul>
+                        <li><i className="fa fa-clock text-danger"></i><span>{duration}</span></li>
+                        <li><i className="fa fa-video text-success"></i><span>{lectures} Lectures</span></li>
+                        <li><i className="fa fa-signal text-warning"></i><span>{learner_level}</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div className="crs_grid_foot">
+                <div className="crs_flex">
+                    <div className="crs_fl_first">
+                        <div className="crs_tutor">
+                            <div className="crs_tutor_thumb"><a href="instructor-detail.html"><img src={trainerImg} className="img-fluid circle" alt="" /></a></div><div className="crs_tutor_name"><a href="instructor-detail.html">{trainerName}</a></div>
                         </div>
+                    </div>
+                    <div className="crs_fl_last">
+                        <div className="crs_price"><h2><span className="currency">$</span><span className="theme-cl">{courseFees}</span></h2></div>
                     </div>
                 </div>
             </div>
