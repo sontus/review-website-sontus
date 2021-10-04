@@ -9,7 +9,8 @@ import Courses from '../Courses/Courses';
 const Home = () => {
     // set data on couses
     const [course,setCourse] = useState([]);
-
+    // get latest 6 course
+    const latestCourse = course.slice(0,6);
     // fetch data
     useEffect( () => {
         fetch('./courses.JSON')
@@ -17,7 +18,6 @@ const Home = () => {
         .then(data => setCourse(data));
     },[]);
 
-    const latestCourse = course.slice(0,6);
     return (
         <Row>
             <section className="sptb-2 sptb-tab">
@@ -62,7 +62,7 @@ const Home = () => {
 
                   
                         {
-                            
+                            // loop course
                             latestCourse.map(course => <Courses
                                 key={course.key}
                                 course={course}
