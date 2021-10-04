@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Form, Button, Row, Container } from 'react-bootstrap';
+import {Button, Row, Container } from 'react-bootstrap';
 import main from '../../assets/main.png'
 import './Home.css';
 import { NavLink } from 'react-router-dom';
@@ -16,6 +16,8 @@ const Home = () => {
         .then(res => res.json())
         .then(data => setCourse(data));
     },[]);
+
+    const latestCourse = course.slice(0,6);
     return (
         <Row>
             <section className="sptb-2 sptb-tab">
@@ -25,16 +27,13 @@ const Home = () => {
 							<div className="col-xl-7 col-lg-7 col-md-12">
 								<div className="text-body mb-7">
 									<h1 className="mb-1 leading-tight ">The World's Largest Selection of Courses</h1>
-									<p>It is a long established fact that a reader will be distracted by the readable.</p>
+									<p className="pt-5">E-learning for kids is a non-profit organization providing free, fun, curriculum based quality primary education to all children world wide. The foundation was launched in the USA in 2004 and in the Netherlands in 2007.It is a long established fact that a reader will be distracted by the readable.</p>
 								</div>
 								<div className="search-background bg-transparent">
-									<div className="form row g-0 ">
-										<div className="form-group  col-xl-9 col-lg-9 col-md-12 mb-0">
-                                            <Form.Control type="text" className="form-control input-xl ps-5 border-white-1" placeholder="Search Courses...." />
-										</div>
+									<div className="form row g-0 pt-5">
 										<div className="col-xl-3 col-lg-3 col-md-12 mb-0">
                                             <Button variant="primary" type="submit" className="btn btn-xl btn-block btn-primary br-ts-md-0 br-bs-md-0">
-                                                Search Here
+                                                Explor Now
                                             </Button>
 										</div>
 									</div>
@@ -61,8 +60,10 @@ const Home = () => {
 					<hr/>
 					<div className="row">
 
+                  
                         {
-                            course.map(course => <Courses
+                            
+                            latestCourse.map(course => <Courses
                                 key={course.key}
                                 course={course}
                             
